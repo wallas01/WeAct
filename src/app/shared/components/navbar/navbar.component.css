@@ -1,0 +1,12 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  object-fit: cover;
+}

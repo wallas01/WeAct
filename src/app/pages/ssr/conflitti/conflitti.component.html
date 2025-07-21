@@ -1,0 +1,108 @@
+<header>
+    <h1>Eventi di Conflitto ACLED</h1>
+</header>
+
+<div class="loading-container" *ngIf="loading">
+    <mat-spinner diameter="50"></mat-spinner>
+    <p>Caricamento dati...</p>
+</div>
+
+<div class="error-container" *ngIf="error">
+    <p class="mat-error">Errore durante il caricamento dei dati. Riprova più tardi.</p>
+</div>
+
+<div class="filters-container" *ngIf="!loading && !error">
+    <mat-form-field appearance="fill" class="filter-field">
+        <mat-label>Seleziona una Regione</mat-label>
+        <mat-select [(ngModel)]="selectedRegion" (selectionChange)="onRegionChange()">
+            <mat-option [value]="null">-- Nessuna selezione --</mat-option>
+            <mat-option *ngFor="let region of uniqueRegions" [value]="region">
+                {{ region }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="filter-field">
+        <mat-label>Seleziona un Paese</mat-label>
+        <mat-select [(ngModel)]="selectedCountry" (selectionChange)="onCountryChange()" [disabled]="!selectedRegion">
+            <mat-option [value]="null">-- Nessuna selezione --</mat-option>
+            <mat-option *ngFor="let country of uniqueCountriesForSelectedRegion" [value]="country">
+                {{ country }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="filter-field">
+        <mat-label>Seleziona una Città</mat-label>
+        <mat-select [(ngModel)]="selectedCity" (selectionChange)="onCityChange()" [disabled]="!selectedCountry">
+            <mat-option [value]="null">-- Nessuna selezione --</mat-option>
+            <mat-option *ngFor="let city of uniqueCitiesForSelectedCountry" [value]="city">
+                {{ city }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="fill" class="filter-field">
+        <mat-label>Cerca nella tabella</mat-label>
+        <input matInput (keyup)="applyTableFilter($event)" placeholder="Es. violenza, Roma">
+    </mat-form-field> -->
+</div>
+
+<div class="table-container" *ngIf="!loading && !error && selectedRegion && selectedCountry && selectedCity">
+    <table mat-table [dataSource]="dataSource" matSort multiTemplateDataRows>
+        <ng-container matColumnDef="event_date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Data </th>
+            <td mat-cell *matCellDef="let element"> {{element.event_date}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="location">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Luogo </th>
+            <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="country">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Paese </th>
+            <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="event_type">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo Evento </th>
+            <td mat-cell *matCellDef="let element"> {{element.event_type}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fatalities">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Vittime </th>
+            <td mat-cell *matCellDef="let element"> {{element.fatalities}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="notes">
+            <th mat-header-cell *matHeaderCellDef> Note </th>
+            <td mat-cell *matCellDef="let element"> {{element.notes | slice:0:100}}... </td>
+        </ng-container>
+
+        <ng-container matColumnDef="expandedDetail">
+            <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+                <div class="example-element-detail"
+                    [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                    <div class="element-notes-full">
+                        <p><strong>Note complete:</strong></p>
+                        <p>{{element.notes || 'Nessuna nota completa disponibile.'}}</p>
+                    </div>
+                </div>
+            </td>
+
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns; trackBy: trackByEventId" (click)="toggleRow(row)"
+            [class.expanded-row]="row == expandedElement">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></tr>
+
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="6">Nessun dato corrispondente ai filtri selezionati.</td>
+        </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+</div>

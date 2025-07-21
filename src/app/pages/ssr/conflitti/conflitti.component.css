@@ -1,0 +1,279 @@
+/* Stili specifici per il componente ConflittiComponent */
+:host {
+  display: block; /* Assicura che il componente occupi lo spazio necessario */
+  background-color: #f0f2f5; /* Sfondo leggero per il componente */
+  min-height: calc(100vh - 64px); /* Adatta all'altezza della viewport, sottraendo un'ipotetica altezza della navbar */
+  padding-bottom: 40px; /* Spazio extra in fondo alla pagina */
+}
+
+/* Header del componente (non globale) */
+header {
+  background-color: #3f51b5; /* Colore primario Material */
+  color: white;
+  padding: 1.5em 0; /* Padding verticale */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra pronunciata */
+  margin-bottom: 30px; /* Spazio sotto l'header */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em; /* Dimensione del titolo più grande */
+  font-weight: 500; /* Spessore del font */
+  letter-spacing: 0.02em; /* Leggera spaziatura tra le lettere */
+}
+
+/* Contenitori per messaggi di caricamento/errore */
+.loading-container, .error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  margin-top: 50px;
+  font-size: 1.2em;
+  color: #616161; /* Colore grigio per i messaggi */
+}
+
+.error-container p {
+  color: #d32f2f; /* Colore rosso per gli errori */
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+/* Contenitore principale dei filtri */
+.filters-container {
+  display: flex;
+  flex-wrap: wrap; /* Permette ai filtri di andare a capo */
+  gap: 20px; /* Spazio tra i campi filtro */
+  justify-content: center; /* Centra i filtri orizzontalmente */
+  padding: 20px 25px; /* Padding interno */
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Ombra morbida */
+  margin: 20px auto; /* Centra il contenitore e aggiunge margine verticale */
+  max-width: 1200px; /* Larghezza massima */
+  border-radius: 8px; /* Bordi arrotondati */
+}
+
+.filter-field {
+  width: 280px; /* Larghezza predefinita per i campi filtro */
+}
+
+/* Contenitore della tabella */
+.table-container {
+  margin: 20px auto 40px auto; /* Margini verticali e auto per centratura */
+  max-width: 1200px; /* Larghezza massima */
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden; /* Importante per i bordi arrotondati e lo scroll orizzontale */
+}
+
+/* Stili per la Mat-Table */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Rimuove i bordi duplicati tra le celle */
+}
+
+/* Stili per le celle di intestazione (header) */
+th.mat-header-cell {
+  background-color: #e0e0e0; /* Sfondo grigio chiaro */
+  color: #333;
+  font-weight: 500; /* Leggermente più spesso */
+  font-size: 0.9em;
+  padding: 12px 16px; /* Padding interno */
+  text-align: left;
+}
+
+/* Stili per le celle dati */
+td.mat-cell {
+  padding: 12px 16px;
+  font-size: 0.85em;
+  
+}
+
+/* Effetto hover sulle righe della tabella */
+tr.mat-row:hover {
+  background-color: #f5f5f5;
+}
+
+/* Stili specifici per colonne (es. Note) */
+.mat-column-notes {
+  max-width: 300px; /* Limita la larghezza della colonna note */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Aggiunge "..." se il testo è troppo lungo */
+  white-space: nowrap; /* Impedisce al testo di andare a capo */
+}
+
+/* Stili per il paginatore di Material */
+.mat-paginator {
+  background-color: white;
+   /* Bordo superiore leggero */
+  padding: 10px 16px;
+}
+
+/* Stile per il messaggio quando la tabella è vuota */
+.mat-no-data-row {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  padding: 20px;
+}
+
+/* Media Queries per la Responsiveness */
+
+/* Schermi molto piccoli (max 599px, tipico per smartphone in verticale) */
+@media (max-width: 599px) {
+  header h1 {
+    font-size: 1.5em; /* Riduci dimensione titolo */
+    padding: 0 10px;
+  }
+
+  .filters-container {
+    flex-direction: column; /* Impila i filtri verticalmente */
+    align-items: stretch; /* Estendi i filtri su tutta la larghezza disponibile */
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .filter-field {
+    width: 100%; /* Ogni campo filtro occupa l'intera larghezza */
+  }
+
+  .table-container {
+    margin: 10px;
+    border-radius: 0;
+    box-shadow: none;
+    /* Per rendere la tabella scrollabile orizzontalmente */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Per uno scroll più fluido su iOS */
+  }
+
+  table {
+    min-width: 700px; /* Forza una larghezza minima per la tabella per abilitare lo scroll */
+    width: auto; /* Permette alla tabella di essere più larga del suo contenitore */
+  }
+
+  th.mat-header-cell, td.mat-cell {
+    padding: 8px 12px; /* Riduci il padding delle celle */
+    font-size: 0.8em;
+  }
+
+  .mat-column-notes {
+    max-width: 150px; /* Riduci ulteriormente la larghezza delle note */
+  }
+
+  .example-element-detail {
+    flex-direction: column; /* I dettagli si impilano verticalmente su schermi piccoli */
+    padding: 10px; /* Riduci il padding su schermi molto piccoli */
+  }
+
+  .element-notes-full {
+    padding: 8px; /* Riduci il padding interno */
+    font-size: 0.85em; /* Riduci la dimensione del font per risparmiare spazio */
+  }
+}
+
+
+/* Schermi piccoli (600px - 959px, tipico per smartphone in orizzontale o tablet piccoli) */
+@media (min-width: 600px) and (max-width: 959px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  .filters-container {
+    gap: 15px; /* Spazio leggermente ridotto */
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  .filter-field {
+    width: 200px; /* Larghezza adattata per schermi medi */
+  }
+
+  .table-container {
+    margin: 15px auto;
+  }
+
+  .example-element-detail {
+    padding: 12px;
+  }
+  .element-notes-full {
+    padding: 10px;
+  }
+
+  /* Anche qui, se la tabella diventa troppo stretta, rendila scrollabile */
+  @media (max-width: 800px) { /* Esempio: rendi scrollabile sotto gli 800px */
+    .table-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    table {
+      min-width: 750px; /* Larghezza minima per lo scroll */
+      width: auto;
+    }
+  }
+}
+
+/* Schermi grandi (desktop) - Dalla larghezza più grande in su */
+@media (min-width: 960px) {
+  .filters-container {
+    gap: 25px; /* Più spazio tra i filtri su desktop */
+  }
+
+  .filter-field {
+    width: 300px; /* Larghezza maggiore per i campi filtro su desktop */
+  }
+}
+
+
+/* Stili per la riga espansa */
+.expanded-row {
+  background-color: #e8eaf6; /* Sfondo leggermente diverso per la riga espansa */
+}
+
+.detail-row {
+  height: 0; /* Altezza iniziale 0 per l'animazione */
+}
+
+.example-element-detail {
+  overflow: hidden; /* Nasconde il contenuto che sta espandendosi/collassando durante l'animazione */
+  display: flex;
+  padding: 16px; /* Padding interno per il contenuto espanso */
+  /* Aggiungi queste proprietà per assicurare che il contenuto interno sia responsivo */
+  box-sizing: border-box; /* Include padding e border nella larghezza/altezza totale */
+  width: 100%; /* Assicura che occupi tutta la larghezza disponibile */
+}
+
+.element-notes-full {
+  flex: 1; /* Occupa lo spazio disponibile */
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  /* Aggiungi o verifica per il wrapping del testo */
+  overflow-wrap: break-word; /* Forza il testo a capo anche per parole lunghe */
+  word-wrap: break-word;     /* Compatibilità con browser più datati */
+  hyphens: auto;             /* Permette la sillabazione automatica */
+}
+
+.element-notes-full p {
+  margin: 0 0 8px 0;
+  line-height: 1.5;
+  font-size: 0.9em;
+  /* Assicurati che anche i paragrafi individuali rispettino il wrapping */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.element-notes-full p:last-child {
+  margin-bottom: 0;
+}
+
+/* Stile per indicare che la riga è cliccabile */
+tr.mat-row {
+  cursor: pointer;
+}
+
+

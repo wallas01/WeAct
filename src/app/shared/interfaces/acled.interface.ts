@@ -1,0 +1,33 @@
+export interface AcledEvent {
+  event_id_cnty: string;
+  event_date: string;
+  year: number;
+  time_precision: number;
+  disorder_type: string;
+  event_type: string;
+  sub_event_type: string;
+  actor1: string;
+  assoc_actor_1: string;
+  inter1: number;
+  actor2: string;
+  assoc_actor_2: string;
+  inter2: number;
+  interaction: number;
+  civilian_targeting: string;
+  iso: number;
+  region: string;
+  country: string;
+  admin1: string;
+  admin2: string;
+  admin3: string;
+  location: string;
+  latitude: number;
+  longitude: number;
+  geo_precision: number;
+  source: string;
+  source_scale: string;
+  notes: string;
+  fatalities: number;
+  tags: string;
+  timestamp: number;
+}

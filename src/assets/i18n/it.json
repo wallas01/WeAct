@@ -1,0 +1,73 @@
+{
+  "HOME": {
+    "TITLE": "WeAct",
+    "SUBTITLE": "Una piattaforma per proporre, votare e collaborare su azioni concrete per affrontare crisi globali e sociali.",
+    "EXPLORE_PROPOSALS": "Esplora le Proposte",
+    "MISSION_TITLE": "La Nostra Missione",
+    "MISSION_TEXT": "Offriamo uno spazio digitale aperto, sicuro e collaborativo dove cittadini, attivisti, professionisti e organizzazioni possono:",
+    "MISSION_LIST": [
+      "Proporre azioni concrete per affrontare conflitti, violazioni dei diritti umani, emergenze sociali o ambientali.",
+      "Votare e discutere le idee più promettenti.",
+      "Unirsi o offrire competenze per realizzarle."
+    ],
+    "TARGET_AUDIENCE_TITLE": "A Chi Ci Rivolgiamo",
+    "TARGET_AUDIENCE_CARDS": {
+      "CITIZENS": {
+        "TITLE": "Cittadini",
+        "TEXT": "Interessati a cause globali."
+      },
+      "ACTIVISTS_NGOS": {
+        "TITLE": "Attivisti e ONG",
+        "TEXT": "In cerca di una piattaforma per mobilitare supporto."
+      },
+      "CREATORS_DEVELOPERS": {
+        "TITLE": "Creatori e Sviluppatori",
+        "TEXT": "Che vogliono contribuire con le loro competenze."
+      },
+      "EDUCATORS_STUDENTS": {
+        "TITLE": "Educatori e Studenti",
+        "TEXT": "Che cercano di impegnarsi in questioni del mondo reale."
+      }
+    }
+  },
+  "NAVBAR": {
+    "HOME": "Home",
+    "PROPOSTE": "Proposte",
+    "CONFLITTI": "Conflitti",
+    "PARTECIPA": "Partecipa",
+    "DASHBOARD": "Dashboard",
+    "ABOUT": "About",
+    "LOGIN": "Login",
+    "REGISTER": "Registrati",
+    "LOGOUT": "Logout"
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "EMAIL_LABEL": "Email",
+    "EMAIL_ERROR": "Inserisci una email valida",
+    "PASSWORD_LABEL": "Password",
+    "PASSWORD_ERROR": "La password deve contenere almeno 6 caratteri",
+    "LOGIN_BUTTON": "Login",
+    "LOGIN_WITH_GOOGLE": "Login con Google",
+    "NO_ACCOUNT": "Non hai un account?",
+    "REGISTER_LINK": "Registrati qui",
+    "SUCCESS_MESSAGE": "Login effettuato!",
+    "ERROR_MESSAGE": "Errore login: ",
+    "GOOGLE_SUCCESS_MESSAGE": "Login Google effettuato!",
+    "GOOGLE_ERROR_MESSAGE": "Errore login Google: "
+  },
+  "REGISTER": {
+    "TITLE": "Registrazione",
+    "EMAIL_LABEL": "Email",
+    "EMAIL_ERROR": "Inserisci una email valida",
+    "PASSWORD_LABEL": "Password",
+    "PASSWORD_ERROR": "La password deve contenere almeno 6 caratteri",
+    "CONFIRM_PASSWORD_LABEL": "Conferma Password",
+    "CONFIRM_PASSWORD_ERROR": "Le password non corrispondono",
+    "REGISTER_BUTTON": "Registrati",
+    "HAVE_ACCOUNT": "Hai già un account?",
+    "LOGIN_LINK": "Accedi qui",
+    "SUCCESS_MESSAGE": "Registrazione avvenuta con successo!",
+    "ERROR_MESSAGE": "Errore registrazione: "
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "HOME": {
+    "TITLE": "WeAct",
+    "SUBTITLE": "A platform to propose, vote, and collaborate on concrete actions to address global and social crises.",
+    "EXPLORE_PROPOSALS": "Explore Proposals",
+    "MISSION_TITLE": "Our Mission",
+    "MISSION_TEXT": "We provide an open, safe, and collaborative digital space where citizens, activists, professionals, and organizations can:",
+    "MISSION_LIST": [
+      "Propose concrete actions to address conflicts, human rights violations, and social or environmental emergencies.",
+      "Vote on and discuss the most promising ideas.",
+      "Join or offer skills to bring them to life."
+    ],
+    "TARGET_AUDIENCE_TITLE": "Who We Are For",
+    "TARGET_AUDIENCE_CARDS": {
+      "CITIZENS": {
+        "TITLE": "Citizens",
+        "TEXT": "Concerned about global causes."
+      },
+      "ACTIVISTS_NGOS": {
+        "TITLE": "Activists & NGOs",
+        "TEXT": "Looking for a platform to mobilize support."
+      },
+      "CREATORS_DEVELOPERS": {
+        "TITLE": "Creators & Developers",
+        "TEXT": "Wanting to contribute their skills."
+      },
+      "EDUCATORS_STUDENTS": {
+        "TITLE": "Educators & Students",
+        "TEXT": "Seeking to engage with real-world issues."
+      }
+    }
+  },
+  "NAVBAR": {
+    "HOME": "Home",
+    "PROPOSTE": "Proposals",
+    "CONFLITTI": "Conflicts",
+    "PARTECIPA": "Participate",
+    "DASHBOARD": "Dashboard",
+    "ABOUT": "About",
+    "LOGIN": "Login",
+    "REGISTER": "Register",
+    "LOGOUT": "Logout"
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "EMAIL_LABEL": "Email",
+    "EMAIL_ERROR": "Please enter a valid email address",
+    "PASSWORD_LABEL": "Password",
+    "PASSWORD_ERROR": "Password must be at least 6 characters long",
+    "LOGIN_BUTTON": "Login",
+    "LOGIN_WITH_GOOGLE": "Login with Google",
+    "NO_ACCOUNT": "Don't have an account?",
+    "REGISTER_LINK": "Register here",
+    "SUCCESS_MESSAGE": "Login successful!",
+    "ERROR_MESSAGE": "Login error: ",
+    "GOOGLE_SUCCESS_MESSAGE": "Google login successful!",
+    "GOOGLE_ERROR_MESSAGE": "Google login error: "
+  },
+  "REGISTER": {
+    "TITLE": "Register",
+    "EMAIL_LABEL": "Email",
+    "EMAIL_ERROR": "Please enter a valid email address",
+    "PASSWORD_LABEL": "Password",
+    "PASSWORD_ERROR": "Password must be at least 6 characters long",
+    "CONFIRM_PASSWORD_LABEL": "Confirm Password",
+    "CONFIRM_PASSWORD_ERROR": "Passwords do not match",
+    "REGISTER_BUTTON": "Register",
+    "HAVE_ACCOUNT": "Already have an account?",
+    "LOGIN_LINK": "Login here",
+    "SUCCESS_MESSAGE": "Registration successful!",
+    "ERROR_MESSAGE": "Registration error: "
+  }
+}

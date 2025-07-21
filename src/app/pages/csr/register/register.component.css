@@ -1,0 +1,46 @@
+/* Container esterno per centrare tutto */
+:host {
+  display: flex;
+  justify-content: center;  /* centro orizzontale */
+  align-items: center;      /* centro verticale */
+  height: 100vh;            /* altezza viewport */
+  background-color: #f5f5f5; /* sfondo leggero */
+  padding: 1rem;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+/* Contenitore form */
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;  /* spazio verticale tra campi */
+}
+
+/* Full width input */
+.full-width {
+  width: 100%;
+}
+
+/* Google login button centrato */
+.google-login {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Link */
+a {
+  color: #3f51b5;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

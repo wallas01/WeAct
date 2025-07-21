@@ -1,0 +1,71 @@
+<div class="home-container">
+  <header class="hero">
+    <div class="hero-image-container">
+      <img src="parlament.jpg" alt="WeAct Hero Image" class="hero-image">
+    </div>
+    <div class="hero-content">
+      <h1 class="project-title">{{ 'HOME.TITLE' | translate }}</h1>
+      <p class="project-subtitle">{{ 'HOME.SUBTITLE' | translate }}</p>
+      <a mat-raised-button color="primary" href="/proposte" class="cta-button">{{ 'HOME.EXPLORE_PROPOSALS' | translate
+        }}</a>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="mission-section">
+      <h2 class="section-title">{{ 'HOME.MISSION_TITLE' | translate }}</h2>
+      <p class="section-text">
+        {{ 'HOME.MISSION_TEXT' | translate }}
+      </p>
+      <mat-card class="mission-card">
+        <mat-card-content>
+          <ul class="mission-list">
+            <li *ngFor="let item of 'HOME.MISSION_LIST' | translate">{{ item }}</li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    </section>
+
+    <section class="target-audience-section">
+      <h2 class="section-title">{{ 'HOME.TARGET_AUDIENCE_TITLE' | translate }}</h2>
+      <div class="audience-cards">
+        <mat-card class="card">
+          <mat-card-header>
+            <mat-card-title>{{ 'HOME.TARGET_AUDIENCE_CARDS.CITIZENS.TITLE' | translate }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ 'HOME.TARGET_AUDIENCE_CARDS.CITIZENS.TEXT' | translate }}</p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="card">
+          <mat-card-header>
+            <mat-card-title>{{ 'HOME.TARGET_AUDIENCE_CARDS.ACTIVISTS_NGOS.TITLE' | translate }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ 'HOME.TARGET_AUDIENCE_CARDS.ACTIVISTS_NGOS.TEXT' | translate }}</p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="card">
+          <mat-card-header>
+            <mat-card-title>{{ 'HOME.TARGET_AUDIENCE_CARDS.CREATORS_DEVELOPERS.TITLE' | translate }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ 'HOME.TARGET_AUDIENCE_CARDS.CREATORS_DEVELOPERS.TEXT' | translate }}</p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="card">
+          <mat-card-header>
+            <mat-card-title>{{ 'HOME.TARGET_AUDIENCE_CARDS.EDUCATORS_STUDENTS.TITLE' | translate }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ 'HOME.TARGET_AUDIENCE_CARDS.EDUCATORS_STUDENTS.TEXT' | translate }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 WeAct. All rights reserved.</p>
+  </footer>
+</div>

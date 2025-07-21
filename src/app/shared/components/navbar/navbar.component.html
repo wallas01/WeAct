@@ -1,0 +1,47 @@
+<mat-toolbar color="primary">
+    <span>WeAct</span>
+    <span class="spacer"></span>
+
+    <button mat-button routerLink="/">{{ 'NAVBAR.HOME' | translate }}</button>
+    <button mat-button routerLink="/proposte">{{ 'NAVBAR.PROPOSTE' | translate }}</button>
+    <button mat-button routerLink="/conflitti">{{ 'NAVBAR.CONFLITTI' | translate }}</button>
+    <button mat-button routerLink="/partecipa">{{ 'NAVBAR.PARTECIPA' | translate }}</button>
+    <button mat-button routerLink="/dashboard">{{ 'NAVBAR.DASHBOARD' | translate }}</button>
+    <button mat-button routerLink="/about">{{ 'NAVBAR.ABOUT' | translate }}</button>
+
+    <span class="spacer"></span>
+
+    <ng-container>
+
+        <button mat-button [matMenuTriggerFor]="languageMenu" matTooltip="Language Menu">
+            <span>{{ currentLanguage() }}</span>
+            <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+
+        <mat-menu #languageMenu="matMenu">
+            <button mat-menu-item (click)="switchLanguage('en')">English</button>
+            <button mat-menu-item (click)="switchLanguage('it')">Italian</button>
+        </mat-menu>
+
+    </ng-container>
+
+    <!-- Se utente non loggato -->
+    <ng-container *ngIf="userSignal() as user; else guestLinks">
+
+        <button mat-button [matMenuTriggerFor]="menu" matTooltip="Account">
+            {{ user?.displayName || user?.email }}
+            <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="logout()">{{ 'NAVBAR.LOGOUT' | translate }}</button>
+        </mat-menu>
+
+    </ng-container>
+
+    <!-- Se utente non loggato mostra login/register -->
+    <ng-template #guestLinks>
+        <button mat-button routerLink="/login">{{ 'NAVBAR.LOGIN' | translate }}</button>
+        <button mat-button routerLink="/register">{{ 'NAVBAR.REGISTER' | translate }}</button>
+    </ng-template>
+</mat-toolbar>
