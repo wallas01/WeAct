@@ -1,4 +1,3 @@
-// Angular 15.x​​​​​​‌‌​‌‌​‌​​​‌‌‌​‌​‌​‌‌‌‌‌‌‌ code
 import {
   Component,
   Input,
@@ -24,7 +23,7 @@ import {
   `,
 })
 export class DisplayComponent {
-  public question = 'Too easy??';
+  public question = 'Too easy????';
   public yesAnswer = 'Yes';
   public noAnswer = 'No';
 
@@ -34,8 +33,6 @@ export class DisplayComponent {
     if (e) this.voteFromVoter = e;
   }
 }
-
-// VoterComponent: do not change
 @Component({
   selector: 'voter-component',
   template: `
@@ -46,13 +43,13 @@ export class DisplayComponent {
 })
 export class VoterComponent {
   @Input()
-  public question: string;
+  public question!: string;
 
   @Input()
-  public yesAnswer: string;
+  public yesAnswer!: string;
 
   @Input()
-  public noAnswer: string;
+  public noAnswer!: string;
 
   @Output()
   public output = new EventEmitter<boolean>();
@@ -62,18 +59,12 @@ export class VoterComponent {
   }
 }
 
-// #region Preview
-
 @Component({
-  template: `<display-component></display-component>`,
+  template: `<display-component />`,
 })
 export class PreviewComponent {}
-// #endregion Preview
 
-// #region Module declaration - Do not Change
 @NgModule({
   declarations: [PreviewComponent, DisplayComponent, VoterComponent],
-  entryComponents: [PreviewComponent],
 })
 export class PreviewModule {}
-// #endregion Module declaration
