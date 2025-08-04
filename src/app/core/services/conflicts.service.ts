@@ -10,7 +10,7 @@ export type GroupedAcledEvents = { [regionName: string]: AcledEvent[] };
   providedIn: 'root',
 })
 export class ConflictsService {
-  private apiUrl = `${environment.apiUrlLocal}/conflitti`;
+  private apiUrl = `${environment.apiUrlLocal}/conflict`;
 
   constructor(private http: HttpClient) {}
 
