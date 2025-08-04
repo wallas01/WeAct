@@ -29,6 +29,7 @@ import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-conflitti',
+  standalone: true,
   imports: [
     MatCardModule,
     MatProgressSpinnerModule,
